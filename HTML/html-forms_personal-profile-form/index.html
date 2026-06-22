@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Personal Profile Form</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <h1>Create your Personal Profile</h1>
+
+    <form aria-labelledby="title" aria-describedby="description">
+      <p id="description">
+        We want to get to know you! Please enter your personal information.
+      </p>
+      <fieldset id="basic_Info_Layout">
+        <legend>Personal information</legend>
+        <label for="first_Name">First Name:</label>
+        <input type="text" id="first_Name" />
+        <label for="last_Name">Last Name:</label>
+        <input type="text" id="last_Name" />
+        <label for="birthDate">Your Birthday:</label>
+        <input type="date" id="birthDate" />
+      </fieldset>
+      <p>
+        Can you tell us a little bit more? We want dnt want to annoy you with
+        unwanted ads.
+      </p>
+      <fieldset id="further_Info_Layout">
+        <legend>Further Information</legend>
+        <label for="fav_Color">Favourite Colour:</label>
+        <input type="color" id="fav_Color" value="#E5430F" />
+
+        <label for="fav_Pet">What's your favourite Pet?</label>
+        <select id="fav_Pet">
+          <option value="0">Please select one option</option>
+          <option value="Rabbit">Rabbit</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Fish">Fish</option>
+          <option value="Parrot">Parrot</option>
+          <option value="None">None</option>
+        </select>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
