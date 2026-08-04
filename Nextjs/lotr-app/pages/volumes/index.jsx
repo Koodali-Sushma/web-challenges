@@ -1,22 +1,18 @@
 import Link from "next/link";
-
-export default function volumes() {
+import { volumes } from "@/lib/data.js";
+export default function Volumes() {
   return (
-    <ul>
+    <>
       <h3>List of volumes:</h3>
-      <li>
-        <Link href="/volumes/the-fellowship-of-the-ring">
-          The-fellowship-of-the-ring
-        </Link>
-      </li>
-      <li>
-        <Link href="/volumes/the-two-towers">The-two-towers</Link>
-      </li>
-      <li>
-        <Link href="/volumes/the-return-of-the-king">
-          The-return-of-the-king
-        </Link>
-      </li>
-    </ul>
+      <ul>
+        {volumes.map(({ title, slug }) => {
+          return (
+            <li key={slug}>
+              <Link href={`/volumes/${slug}`}>{title}</Link>
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 }

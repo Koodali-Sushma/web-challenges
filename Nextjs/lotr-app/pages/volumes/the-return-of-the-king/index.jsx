@@ -22,7 +22,7 @@ export default function exploreVolumes() {
   return (
     <>
       <div>
-        <h2>Volume 1: {currentVolume.title}</h2>
+        <h2>Volume 3: {currentVolume.title}</h2>
         <p>{currentVolume.description}</p>
         <Image
           src={currentVolume.cover}

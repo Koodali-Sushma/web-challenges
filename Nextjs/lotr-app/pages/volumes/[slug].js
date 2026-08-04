@@ -4,9 +4,9 @@ import { useRouter } from "next/router.js";
 import Head from "next/head.js";
 
 export default function exploreVolumes() {
-  const { query } = useRouter();
-  const { slug } = query;
-  const { title, description } = volumes;
+  const route = useRouter();
+  const { slug } = route.query;
+
   console.log("Volumes data: ", volumes);
 
   const currentVolume = volumes.find((volume) => volume.slug === slug);
@@ -22,12 +22,28 @@ export default function exploreVolumes() {
     );
   }
   return (
-    <div>
-      <h2>Volume 1: {currentVolume.title}</h2>
+    <>
+      <h2>Volume title: {currentVolume.title}</h2>
       <p>{currentVolume.description}</p>
-      <h4>
-        <Link href="/volumes">Back to volumes list</Link>
-      </h4>
-    </div>
+      <Image
+        src={currentVolume.cover}
+        alt={`{Cover image of ${currentVolume.title}`}
+        width={140}
+        height={230}
+      />
+      <ul>
+        {currentVolume.books.map(({ ordinal, title }) => (
+          <li key={title}>
+            {ordinal}:<strong>{title}</strong>
+          </li>
+        ))}
+      </ul>
+
+      <div>
+        <h4>
+          <Link href="/volumes">Back to volumes list</Link>
+        </h4>
+      </div>
+    </>
   );
 }
